@@ -61,6 +61,9 @@ function makeHeader() {
     cookieHourHeader.textContent = hours[i];
     cookieHeaderRow.appendChild(cookieHourHeader);
   };
+  var totalHeaderElement = document.createElement('th');
+  totalHeaderElement.textContent = 'Total Cookies';
+  cookieHeaderRow.appendChild(totalHeaderElement);
   cookieTable.appendChild(cookieHeaderRow);
 }
 
@@ -80,45 +83,11 @@ function makeCookieRow(){
       cookieTableRow.appendChild(cookiePerHourElement);
       cookieTable.appendChild(cookieTableRow);
     };
+    var totalCookieElement = document.createElement('td');
+    totalCookieElement.textContent = allLocations[i].totalDailyCookieSales;
+    cookieTableRow.appendChild(totalCookieElement);
+    cookieTable.appendChild(cookieTableRow);
   };
 }
 
 makeCookieRow();
-
-
-
-
-//     function makeAllRows() {
-//       for (var cat = 0; cat < allCats.length; cat++){
-//         var tableRow = document.createElement('tr'); // creates a tr element
-//         var tdElement = document.createElement('td'); //creates a td element
-//         tdElement.textContent = allCats[cat].name; //fill tdElement with content
-//         tableRow.appendChild(tdElement); //add the tdElement to the tr element
-//         tdElement = document.createElement('td');
-//         tdElement.textContent = allCats[cat].color;
-//         tableRow.appendChild(tdElement);
-//         tdElement = document.createElement('td');
-//         tdElement.textContent = allCats[cat].tail;
-//         tableRow.appendChild(tdElement);
-//         catTable.appendChild(tableRow);
-//       };
-//     }
-//   }
-// }
-
-
-// //Render Sample from Previous Iterations
-//
-// firstAndPike.render = function() {
-//   var pikeList = document.getElementById('pikeId');
-//   for (var i = 0; i < hours.length; i++){
-//     var listElement = document.createElement('li');
-//     listElement.textContent = hours[i] + ': ' + this.cookiesEachHourArray[i] + ' cookies';
-//     pikeList.appendChild(listElement);
-//   }
-//   var totalElement = document.createElement('li');
-//   totalElement.textContent = 'Total: ' + this.totalDailyCookieSales + ' cookies';
-//   pikeList.appendChild(totalElement);
-// };
-//
-// firstAndPike.render();
