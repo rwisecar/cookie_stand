@@ -119,3 +119,38 @@ seattleCenter.calcCookiesEachHour = function(){
 seattleCenter.calcCookiesEachHour();
 
 //Capitol Hill
+
+var capHill = {
+
+//STANDARD PROPERTIES
+
+  locationName: 'Capitol Hill',
+  minCustPerHour: 20,
+  maxCustPerHour: 38,
+  avgCookiesPerCust: 2.3,
+  custEachHourArray: [],
+  cookiesEachHourArray: [], //Holds cookies per hour
+  totalDailyCookieSales: 0, //Holds sum of cookies sold per hour
+};
+
+//METHODS
+
+capHill.calcCustEachHour = function() {
+  for(var i = 0; i < hours.length; i++){
+    var singleHourCust = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
+    this.custEachHourArray.push(singleHourCust);
+  };
+};
+
+capHill.calcCookiesEachHour = function(){
+  this.calcCustEachHour();
+  for (var i = 0; i < hours.length; i++) {
+    var singleHourCookies = Math.ceil(this.custEachHourArray[i] * this.avgCookiesPerCust);
+    this.cookiesEachHourArray.push(singleHourCookies);
+    this.totalDailyCookieSales += singleHourCookies;
+  };
+};
+
+capHill.calcCookiesEachHour();
+
+//Alki
