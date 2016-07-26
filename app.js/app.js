@@ -27,7 +27,7 @@ firstAndPike.calcCustEachHour = function() {
   console.log(this.custEachHourArray);
 };
 
-firstAndPike.calcCustEachHour();
+// firstAndPike.calcCustEachHour();
 
 firstAndPike.calcCookiesEachHour = function() {
   this.calcCustEachHour();
