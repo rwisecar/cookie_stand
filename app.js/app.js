@@ -153,4 +153,38 @@ capHill.calcCookiesEachHour = function(){
 
 capHill.calcCookiesEachHour();
 
+
 //Alki
+
+var alkiBeach = {
+
+//STANDARD PROPERTIES
+
+  locationName: 'Alki',
+  minCustPerHour: 20,
+  maxCustPerHour: 38,
+  avgCookiesPerCust: 2.3,
+  custEachHourArray: [],
+  cookiesEachHourArray: [], //Holds cookies per hour
+  totalDailyCookieSales: 0, //Holds sum of cookies sold per hour
+};
+
+//METHODS
+
+alkiBeach.calcCustEachHour = function() {
+  for(var i = 0; i < hours.length; i++){
+    var singleHourCust = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
+    this.custEachHourArray.push(singleHourCust);
+  };
+};
+
+alkiBeach.calcCookiesEachHour = function(){
+  this.calcCustEachHour();
+  for (var i = 0; i < hours.length; i++) {
+    var singleHourCookies = Math.ceil(this.custEachHourArray[i] * this.avgCookiesPerCust);
+    this.cookiesEachHourArray.push(singleHourCookies);
+    this.totalDailyCookieSales += singleHourCookies;
+  };
+};
+
+alkiBeach.calcCookiesEachHour();
