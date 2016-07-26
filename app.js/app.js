@@ -52,6 +52,7 @@ var cookieTable = document.getElementById('salesTable');
 
 //Header Row
 function makeHeader() {
+  var cookieHeader = document.createElement('thead');
   var cookieHeaderRow = document.createElement('tr');
   var headerElement = document.createElement('th');
   headerElement.textContent = 'Store Locations';
@@ -64,7 +65,8 @@ function makeHeader() {
   var totalHeaderElement = document.createElement('th');
   totalHeaderElement.textContent = 'Total Cookies';
   cookieHeaderRow.appendChild(totalHeaderElement);
-  cookieTable.appendChild(cookieHeaderRow);
+  cookieHeader.appendChild(cookieHeaderRow);
+  cookieTable.appendChild(cookieHeader);
 }
 
 makeHeader();
@@ -91,3 +93,19 @@ function makeCookieRow(){
 }
 
 makeCookieRow();
+
+//Footer
+function makeFooter(){
+  var cookieFooter = document.createElement('tr');
+  var cookieFooterTitle = document.createElement('td');
+  cookieFooterTitle.textContent = 'Total Cookies Per Hour';
+  cookieFooter.appendChild(cookieFooterTitle);
+  for (var i = 0; i < hours.length; i++){
+    var cookieFooterElement = document.createElement('td');
+    cookieFooterElement.textContent = allLocations[i].cookiesEachHourArray[i];
+    cookieFooter.appendChild(cookieFooterElement);
+  };
+  cookieTable.appendChild(cookieFooter);
+}
+
+makeFooter();
