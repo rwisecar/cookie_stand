@@ -66,17 +66,27 @@ function makeHeader() {
 
 makeHeader();
 
-// //Content Rows
-// function makeCookieRow(){
-//   for (var i = 0; i < allLocations.length; i++){
-//     var cookieTableRow = document.createElement('tr');
-//     var cookieRowElement = document.createElement('td');
-//     cookieRowElement.textContent = allLocations[i].locationName;
-//     cookieTableRow.appendChild(cookieRowElement);
-//   };
-//   cookieTable.appendChild(cookieTableRow);
-// }
-// makeCookieRow();
+//Location Name Rows
+function makeCookieRow(){
+  for (var i = 0; i < allLocations.length; i++){
+    var cookieTableRow = document.createElement('tr');
+    var cookieRowElement = document.createElement('td');
+    cookieRowElement.textContent = allLocations[i].locationName;
+    cookieTableRow.appendChild(cookieRowElement);
+    cookieTable.appendChild(cookieTableRow);
+    for (var j = 0; j < hours.length; j++){
+      var cookiePerHourElement = document.createElement('td');
+      cookiePerHourElement.textContent = allLocations[i].cookiesEachHourArray[j];
+      cookieTableRow.appendChild(cookiePerHourElement);
+      cookieTable.appendChild(cookieTableRow);
+    };
+  };
+}
+
+makeCookieRow();
+
+
+
 
 //     function makeAllRows() {
 //       for (var cat = 0; cat < allCats.length; cat++){
