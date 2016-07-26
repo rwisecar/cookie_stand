@@ -1,0 +1,17 @@
+body {
+  background-color: #F4F6FB;
+}
+
+ul {
+  font-family: "Futura", sans-serif;
+  font-kerning: 2em;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+ul li {
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  font-kerning: auto;
+}
