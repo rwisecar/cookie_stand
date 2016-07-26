@@ -5,7 +5,8 @@ body {
 ul {
   font-family: "Futura", sans-serif;
   font-kerning: 2em;
-  font-size: 20px;
+  font-size: 25px;
+  float: left;
   font-weight: bold;
 }
 
