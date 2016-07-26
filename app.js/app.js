@@ -24,7 +24,7 @@ firstAndPike.calcCustEachHour = function() {
     this.minCustPerHour + 1) + this.minCustPerHour);
     this.custEachHourArray.push(singleHourCust);
   }
-  console.log(this.custEachHourArray);
+  // console.log(this.custEachHourArray);
 };
 
 // firstAndPike.calcCustEachHour();
@@ -36,7 +36,7 @@ firstAndPike.calcCookiesEachHour = function() {
     this.cookiesEachHourArray.push(singleHourCookies);
     this.totalDailyCookieSales += singleHourCookies;
   }
-  console.log(this.totalDailyCookieSales);
+  // console.log(this.totalDailyCookieSales);
 };
 
 firstAndPike.calcCookiesEachHour();
