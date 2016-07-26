@@ -49,3 +49,38 @@ firstAndPike.calcCookiesEachHour();
 // firstAndPike.avgCookies(firstAndPike.minCustomers, firstAndPike.maxCustomers);
 
 //SeaTac
+
+
+var SeaTac = {
+
+//STANDARD PROPERTIES
+
+  locationName: 'SeaTac Airport',
+  minCustPerHour: 34,
+  maxCustPerHour: 24,
+  avgCookiesPerCust: 1.2,
+  custEachHourArray: [],
+  cookiesEachHourArray: [], //Holds cookies per hour
+  totalDailyCookieSales: 0, //Holds sum of cookies sold per hour
+};
+//METHODS
+
+SeaTac.calcCustEachHour = function() {
+  for(var i = 0; i < hours.length; i++){
+    var singleHourCust = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
+    this.custEachHourArray.push(singleHourCust);
+  };
+};
+
+SeaTac.calcCookiesEachHour = function(){
+  this.calcCustEachHour();
+  for (var i = 0; i < hours.length; i++) {
+    var singleHourCookies = Math.ceil(this.custEachHourArray[i] * this.avgCookiesPerCust);
+    this.cookiesEachHourArray.push(singleHourCookies);
+    this.totalDailyCookieSales += singleHourCookies;
+  };
+};
+
+SeaTac.calcCookiesEachHour();
+
+//Seattle Center
