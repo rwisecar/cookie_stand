@@ -95,18 +95,20 @@ function makeHeader(){
   cookieTable.appendChild(cookieHeader);
 };
 makeHeader();
-// //Footer
-// function makeFooter(){
-//   var cookieFooter = document.createElement('tr');
-//   var cookieFooterTitle = document.createElement('td');
-//   cookieFooterTitle.textContent = 'Total Cookies Per Hour';
-//   cookieFooter.appendChild(cookieFooterTitle);
-//   for (var i = 0; i < hours.length; i++){
-//     var cookieFooterElement = document.createElement('td');
-//     cookieFooterElement.textContent = allLocations[i].cookiesEachHourArray[i];
-//     cookieFooter.appendChild(cookieFooterElement);
-//   };
-//   cookieTable.appendChild(cookieFooter);
-// }
-//
-// makeFooter();
+
+//Footer
+function makeFooter(){
+  var cookieTable = document.getElementById('salesTable');
+  var cookieFooter = document.createElement('tr');
+  var cookieFooterTitle = document.createElement('td');
+  cookieFooterTitle.textContent = 'Total Cookies Per Hour';
+  cookieFooter.appendChild(cookieFooterTitle);
+  for (var i = 0; i < hours.length; i++){
+    var cookieFooterCell = document.createElement('td');
+    cookieFooterCell.textContent = 'Nope';
+    cookieFooter.appendChild(cookieFooterCell);
+  };
+  cookieTable.appendChild(cookieFooter);
+}
+
+makeFooter();
