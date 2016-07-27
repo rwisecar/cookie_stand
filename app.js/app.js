@@ -1,11 +1,14 @@
 'use strict';
-//Worked with Britt, had help from Judy
+//Worked with Britt, had help from Judy and Adrian. Updated following code review
 
 //Establishing array of store hours of operation
 var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 am', '1 am', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
 
 //establishing array into which I'll push each of my objects
 var allLocations = [];
+
+//establishing table to which data will be pushed
+var cookieTable = document.getElementById('salesTable');
 
 // Object Constructor function- create objects with the properties listed below
 function StoreLocation(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust){
@@ -43,8 +46,7 @@ function StoreLocation(locationName, minCustPerHour, maxCustPerHour, avgCookiesP
 
 // Create each row of the table using a render function
   this.render = function(){
-    //find the table to append our table elements to, create a new row for each store Name, create a new cell in that row, populate it with the name of each location, and append the cells to the table row.
-    var cookieTable = document.getElementById('salesTable');
+    //create a new row for each store Name, create a new cell in that row, populate it with the name of each location, and append the cells to the table row.
     var cookieTableRow = document.createElement('tr');
     var locationTableCell = document.createElement('td');
     locationTableCell.textContent = this.locationName;
@@ -77,9 +79,13 @@ capHill.render();
 var alkiBeach = new StoreLocation('Alki',2,16,4.6);
 alkiBeach.render();
 
+// function renderAllStores() {
+//   for (var i = 0; i < storeLocations.length; i++){
+//     storeLocations[i].render();
+//   }
+// }
 //Creating a header row by creating a row, creating a cell, adding content (hours of operation, populated with a for loop), and appending cell to row, and row to table.
 function makeHeader(){
-  var cookieTable = document.getElementById('salesTable');
   var cookieHeader = document.createElement('thead');
   var cookieHeaderRow = document.createElement('tr');
   var headerElement = document.createElement('th');
@@ -97,22 +103,31 @@ function makeHeader(){
   cookieHeader.appendChild(cookieHeaderRow);
   cookieTable.appendChild(cookieHeader);
 };
-//run the function
-makeHeader();
 
-//Creating a footer that, right now, just holds the word "nope" for each cell
+//A footer, based on Adrian and Lee's code, and with Adrian and Britt's help, made following code review, that calculates the total cookies sold per hour.
 function makeFooter(){
-  var cookieTable = document.getElementById('salesTable');
   var cookieFooter = document.createElement('tr');
   var cookieFooterTitle = document.createElement('td');
   cookieFooterTitle.textContent = 'Total Cookies Per Hour';
   cookieFooter.appendChild(cookieFooterTitle);
+  var combinedTotal = 0;
   for (var i = 0; i < hours.length; i++){
+    var hourlyTotal = 0;
+    for (var j = 0; j < allLocations.length; j++) {
+      hourlyTotal = hourlyTotal + allLocations[j].cookiesEachHourArray[i];
+      combinedTotal += allLocations[j].cookiesEachHourArray[i];
+      console.log(combinedTotal);
+    }
     var cookieFooterCell = document.createElement('td');
-    //fill each cell with the same content- someday this will add up the total cookies for each hour
-    cookieFooterCell.textContent = 'Nope';
+    cookieFooterCell.textContent = hourlyTotal;
     cookieFooter.appendChild(cookieFooterCell);
-  };
+  }
+  var cookieFooterTotalCell = document.createElement('td');
+  cookieFooterTotalCell.textContent = combinedTotal;
+  cookieFooter.appendChild(cookieFooterTotalCell);
   cookieTable.appendChild(cookieFooter);
 }
+//
+//run the function
+makeHeader();
 makeFooter();
