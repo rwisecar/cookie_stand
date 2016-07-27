@@ -7,7 +7,7 @@
 </head>
 <body>
   <header>
-    <h1>Pat's Salmon Cookies</h1>
+    <h1 id="test">Pat's Salmon Cookies</h1>
     <img id="fish" src="https://github.com/codefellows/seattle-201d11/raw/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png" alt="fishpic" title="This is a picture of a salmon. Don't you want cookies made from it?"/>
     <h2>Sales Data</h2>
   </header>
@@ -15,17 +15,17 @@
     <fieldset>
       <legend>Add or update franchise locations</legend>
       <!--Location Input-->
-      <label for="nameLabel"> Location Name: </label>
-      <input type="text" name="locationInput"/>
+      <label for="newName"> Location Name: </label>
+      <input type="text" name="newName"/>
       <!--minCustPerHour Input-->
-      <label for="min"> Customers Per Hour- Min: </label>
-      <input type="number" name="minLabel" maxlength="2"/>
+      <label for="newMin"> Customers Per Hour- Min: </label>
+      <input type="number" name="newMin" maxlength="2"/>
       <!--maxCustPerHour Input-->
-      <label for="max"> Max: </label>
-      <input type="number" name="maxLabel"/>
+      <label for="newMax"> Max: </label>
+      <input type="number" name="newMax"/>
       <!--Average Cookies per customer Input-->
-      <label for="cookiesPerCust"> Cookies Per Sale: </label>
-      <input type="number" name="cookiesPerSale"/>
+      <label for="newCookies"> Cookies Per Sale: </label>
+      <input type="number" name="newCookies"/>
       <!--Button for submitting user input-->
       <button type="submit" id="submitButton">Submit</button>
     </fieldset>

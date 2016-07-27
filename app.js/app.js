@@ -10,6 +10,8 @@ var allLocations = [];
 //establishing table to which data will be pushed
 var cookieTable = document.getElementById('salesTable');
 
+
+
 // Object Constructor function- create objects with the properties listed below
 function StoreLocation(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust){
 //Properties for the object constructor
@@ -20,7 +22,8 @@ function StoreLocation(locationName, minCustPerHour, maxCustPerHour, avgCookiesP
   this.custEachHourArray = [],
   this.cookiesEachHourArray = [];
   this.totalDailyCookieSales = 0;
-
+  //push the result to the allLocations array
+  allLocations.push(this);
   //Methods
   //Calculate customers each hour using a random number generator and a for loop, then push that input to the custEachHourArray.
   this.calcCustEachHour = function(){
@@ -29,7 +32,6 @@ function StoreLocation(locationName, minCustPerHour, maxCustPerHour, avgCookiesP
       this.custEachHourArray.push(singleHourCust);
     }
   };
-
   //Calculate number of cookies sold each hour using previous function output, and use the output to populate cookiesEachHourArray. Then add each singleHourCookies to find daily total for each location.
   this.calcCookiesEachHour = function(){
     this.calcCustEachHour();
@@ -41,8 +43,7 @@ function StoreLocation(locationName, minCustPerHour, maxCustPerHour, avgCookiesP
   };
   //run the function
   this.calcCookiesEachHour();
-  //push the result to the allLocations array
-  allLocations.push(this);
+
 
 // Create each row of the table using a render function
   this.render = function(){
@@ -126,8 +127,42 @@ function makeFooter(){
   cookieFooterTotalCell.textContent = combinedTotal;
   cookieFooter.appendChild(cookieFooterTotalCell);
   cookieTable.appendChild(cookieFooter);
-}
-//
+};
+
+//event handler test
+var testing = document.getElementById('test');
+
+function doSomethingDammit() {
+  testing.textContent = 'do something dammit';
+};
+
+test.addEventListener('mouseover', doSomethingDammit);
+
+var inputForm = document.getElementById('inputForm');
+var submitButton = document.getElementById('submitButton');
+
+function createNewObject(event) {
+  event.preventDefault();
+
+  var newName = event.target.newName.value;
+  var newMin = event.target.newMin.value;
+  var newMax = event.target.newMax.value;
+  var newCookies = event.target.newCookies.value;
+  console.log(newName, newMin, newMax, newCookies);
+
+  if (!event.target.newName.value || !event.target.newMin.value || !event.target.newMax.value || !event.target.newCookies.value) {
+    return alert('Blank fields dummy fill em in');
+  };
+
+  var newObject = new StoreLocation(newName, newMin, newMax, newCookies);
+  console.log(newObject);
+  allLocations.push(newObject);
+};
+
+inputForm.addEventListener('submit', createNewObject);
+
+
+
 //run the function
 makeHeader();
 makeFooter();
