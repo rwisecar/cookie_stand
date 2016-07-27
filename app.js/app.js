@@ -1,5 +1,5 @@
 'use strict';
-//Worked with Britt, had help from Judy and Adrian. Updated following code review
+//Worked with Britt, had help from Judy and Adrian on building the table. Updated following code review. Worked with Maelle on making the form input populate the correct row.
 
 //Establishing array of store hours of operation
 var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 am', '1 am', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
@@ -64,21 +64,16 @@ function StoreLocation(locationName, minCustPerHour, maxCustPerHour, avgCookiesP
     cookieTableRow.appendChild(totalCookieElement);
     cookieTable.appendChild(cookieTableRow);
   };
-
 };
 
 //Object Instances / Array Elements- creating a new object for each store location, and running the render function on each object
 
 var firstAndPike = new StoreLocation('First and Pike',23,65,6.3);
-// firstAndPike.render();
 var seaTacAir = new StoreLocation('SeaTac Airport',34,24,1.2);
-// seaTacAir.render();
 var seaCenter = new StoreLocation('Seattle Center',11,38,3.7);
-// seaCenter.render();
 var capHill = new StoreLocation('Capitol Hill',20,38,2.3);
-// capHill.render();
 var alkiBeach = new StoreLocation('Alki',2,16,4.6);
-// alkiBeach.render();
+
 
 //Creating a header row by creating a row, creating a cell, adding content (hours of operation, populated with a for loop), and appending cell to row, and row to table.
 function makeHeader(){
@@ -106,6 +101,10 @@ function renderAll(){
   };
 };
 
+function workIt(){
+  cookieTable.innerHTML = '';
+};
+
 //A footer, based on Adrian and Lee's code, and with Adrian and Britt's help, made following code review, that calculates the total cookies sold per hour.
 function makeFooter(){
   var cookieFooter = document.createElement('tr');
@@ -130,14 +129,12 @@ function makeFooter(){
   cookieTable.appendChild(cookieFooter);
 };
 
-//event handler test
-var testing = document.getElementById('test');
+// run the function
+makeHeader();
+renderAll();
+makeFooter();
 
-function doSomethingDammit() {
-  testing.textContent = 'do something dammit';
-};
-
-test.addEventListener('mouseover', doSomethingDammit);
+//event handler
 
 var inputForm = document.getElementById('inputForm');
 var submitButton = document.getElementById('submitButton');
@@ -151,21 +148,27 @@ function createNewObject(event) {
   var newCookies = event.target.newCookies.value;
   console.log(newName, newMin, newMax, newCookies);
 
+  //basic data validation so that blank fields cannot be submitted
   if (!event.target.newName.value || !event.target.newMin.value || !event.target.newMax.value || !event.target.newCookies.value) {
-    return alert('Blank fields dummy fill em in');
+    return alert('Blank fields dummy! Fill em in.');
   };
+
+  //Clears input fields after submit pressed
+  event.target.newName.value = null;
+  event.target.newMin.value = null;
+  event.target.newMax.value = null;
+  event.target.newCookies.value = null;
 
   var newObject = new StoreLocation(newName, newMin, newMax, newCookies);
   console.log(newObject);
-  allLocations.push(newObject);
-  newObject.render();
+  //clear table before loading new content
+  workIt();
+  //fill table with new content
+  makeHeader();
+  //render new row
+  renderAll();
+  //add footer element
+  makeFooter();
 };
 
 inputForm.addEventListener('submit', createNewObject);
-
-
-
-//run the function
-makeHeader();
-renderAll();
-makeFooter();
