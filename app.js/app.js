@@ -70,21 +70,16 @@ function StoreLocation(locationName, minCustPerHour, maxCustPerHour, avgCookiesP
 //Object Instances / Array Elements- creating a new object for each store location, and running the render function on each object
 
 var firstAndPike = new StoreLocation('First and Pike',23,65,6.3);
-firstAndPike.render();
+// firstAndPike.render();
 var seaTacAir = new StoreLocation('SeaTac Airport',34,24,1.2);
-seaTacAir.render();
+// seaTacAir.render();
 var seaCenter = new StoreLocation('Seattle Center',11,38,3.7);
-seaCenter.render();
+// seaCenter.render();
 var capHill = new StoreLocation('Capitol Hill',20,38,2.3);
-capHill.render();
+// capHill.render();
 var alkiBeach = new StoreLocation('Alki',2,16,4.6);
-alkiBeach.render();
+// alkiBeach.render();
 
-// function renderAllStores() {
-//   for (var i = 0; i < storeLocations.length; i++){
-//     storeLocations[i].render();
-//   }
-// }
 //Creating a header row by creating a row, creating a cell, adding content (hours of operation, populated with a for loop), and appending cell to row, and row to table.
 function makeHeader(){
   var cookieHeader = document.createElement('thead');
@@ -103,6 +98,12 @@ function makeHeader(){
   cookieHeaderRow.appendChild(totalHeaderElement);
   cookieHeader.appendChild(cookieHeaderRow);
   cookieTable.appendChild(cookieHeader);
+};
+
+function renderAll(){
+  for (var i = 0; i < allLocations.length; i++){
+    allLocations[i].render();
+  };
 };
 
 //A footer, based on Adrian and Lee's code, and with Adrian and Britt's help, made following code review, that calculates the total cookies sold per hour.
@@ -157,6 +158,7 @@ function createNewObject(event) {
   var newObject = new StoreLocation(newName, newMin, newMax, newCookies);
   console.log(newObject);
   allLocations.push(newObject);
+  newObject.render();
 };
 
 inputForm.addEventListener('submit', createNewObject);
@@ -165,4 +167,5 @@ inputForm.addEventListener('submit', createNewObject);
 
 //run the function
 makeHeader();
+renderAll();
 makeFooter();
