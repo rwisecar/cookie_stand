@@ -46,3 +46,20 @@ td {
   padding: 2%;
 
 }
+
+form {
+  padding-bottom: 2%;
+  width: 90.5%;
+  margin-left: 5%;
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+}
+
+form label {
+  padding-left: 2%;
+}
+
+button {
+  margin-left: 5%;
+  padding: 0.5% 1% 0.5% 1%;
+}

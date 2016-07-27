@@ -11,11 +11,25 @@
     <img id="fish" src="https://github.com/codefellows/seattle-201d11/raw/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png" alt="fishpic" title="This is a picture of a salmon. Don't you want cookies made from it?"/>
     <h2>Sales Data</h2>
   </header>
-  <!-- <ul class="listHeader" id="pikeId">First and Pike</ul>
-  <ul class="listHeader" id="seatacId">SeaTac Airport</ul>
-  <ul class="listHeader" id="centerId">Seattle Center</ul>
-  <ul class="listHeader" id="caphillId">Capitol Hill</ul>
-  <ul class="listHeader" id="alkiId">Alki</ul> -->
+  <form id="inputForm">
+    <fieldset>
+      <legend>Add or update franchise locations</legend>
+      <!--Location Input-->
+      <label for="nameLabel"> Location Name: </label>
+      <input type="text" name="locationInput"/>
+      <!--minCustPerHour Input-->
+      <label for="min"> Customers Per Hour- Min: </label>
+      <input type="number" name="minLabel" maxlength="2"/>
+      <!--maxCustPerHour Input-->
+      <label for="max"> Max: </label>
+      <input type="number" name="maxLabel"/>
+      <!--Average Cookies per customer Input-->
+      <label for="cookiesPerCust"> Cookies Per Sale: </label>
+      <input type="number" name="cookiesPerSale"/>
+      <!--Button for submitting user input-->
+      <button type="submit" id="submitButton">Submit</button>
+    </fieldset>
+  </form>
   <table id="salesTable"></table>
   <script src="app.js/app.js"></script>
 </body>
