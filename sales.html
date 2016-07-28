@@ -7,15 +7,29 @@
 </head>
 <body>
   <header>
-    <h1>Pat's Salmon Cookies</h1>
+    <h1 id="test">Pat's Salmon Cookies</h1>
     <img id="fish" src="https://github.com/codefellows/seattle-201d11/raw/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png" alt="fishpic" title="This is a picture of a salmon. Don't you want cookies made from it?"/>
     <h2>Sales Data</h2>
   </header>
-  <!-- <ul class="listHeader" id="pikeId">First and Pike</ul>
-  <ul class="listHeader" id="seatacId">SeaTac Airport</ul>
-  <ul class="listHeader" id="centerId">Seattle Center</ul>
-  <ul class="listHeader" id="caphillId">Capitol Hill</ul>
-  <ul class="listHeader" id="alkiId">Alki</ul> -->
+  <form id="inputForm">
+    <fieldset>
+      <legend>Add or update franchise locations</legend>
+      <!--Location Input-->
+      <label for="newName"> Location Name: </label>
+      <input type="text" name="newName"/>
+      <!--minCustPerHour Input-->
+      <label for="newMin"> Customers Per Hour- Min: </label>
+      <input type="number" step ="any" name="newMin" maxlength="2"/>
+      <!--maxCustPerHour Input-->
+      <label for="newMax"> Max: </label>
+      <input type="number" step="any" name="newMax"/>
+      <!--Average Cookies per customer Input-->
+      <label for="newCookies"> Cookies Per Sale: </label>
+      <input type="number" step="any" name="newCookies"/>
+      <!--Button for submitting user input-->
+      <button type="submit" id="submitButton">Submit</button>
+    </fieldset>
+  </form>
   <table id="salesTable"></table>
   <script src="app.js/app.js"></script>
 </body>
