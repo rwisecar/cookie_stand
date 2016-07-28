@@ -56,11 +56,11 @@ form {
   font-size: 12px;
 }
 
-form label {
-  padding-left: 2%;
+input {
+  width: 12%;
 }
-
 button {
   margin-left: 5%;
   padding: 0.5% 1% 0.5% 1%;
+  float: right;
 }
