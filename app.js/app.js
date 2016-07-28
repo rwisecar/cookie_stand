@@ -1,5 +1,5 @@
 'use strict';
-//Worked with Britt, had help from Judy and Adrian on building the table. Updated following code review. Worked with Maelle on making the form input populate the correct row.
+//Worked with Britt and had help from Judy while building the table. Updated following code review, based on Adrian and Lee's code. Worked with Maelle on making the form input populate the correct row.
 
 //Establishing array of store hours of operation
 var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 am', '1 am', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
@@ -9,7 +9,6 @@ var allLocations = [];
 
 //establishing table to which data will be pushed
 var cookieTable = document.getElementById('salesTable');
-
 
 
 // Object Constructor function- create objects with the properties listed below
@@ -24,6 +23,7 @@ function StoreLocation(locationName, minCustPerHour, maxCustPerHour, avgCookiesP
   this.totalDailyCookieSales = 0;
   //push the result to the allLocations array
   allLocations.push(this);
+
   //Methods
   //Calculate customers each hour using a random number generator and a for loop, then push that input to the custEachHourArray.
   this.calcCustEachHour = function(){
@@ -101,10 +101,6 @@ function renderAll(){
   };
 };
 
-function workIt(){
-  cookieTable.innerHTML = '';
-};
-
 //A footer, based on Adrian and Lee's code, and with Adrian and Britt's help, made following code review, that calculates the total cookies sold per hour.
 function makeFooter(){
   var cookieFooter = document.createElement('tr');
@@ -129,7 +125,7 @@ function makeFooter(){
   cookieTable.appendChild(cookieFooter);
 };
 
-// run the function
+// run the functions to fill the table on load
 makeHeader();
 renderAll();
 makeFooter();
@@ -139,13 +135,13 @@ makeFooter();
 var inputForm = document.getElementById('inputForm');
 var submitButton = document.getElementById('submitButton');
 
-function createNewObject(event) {
+function handleNewObject(event) {
   event.preventDefault();
 
   var newName = event.target.newName.value;
-  var newMin = event.target.newMin.value;
-  var newMax = event.target.newMax.value;
-  var newCookies = event.target.newCookies.value;
+  var newMin = parseInt(event.target.newMin.value);
+  var newMax = parseInt(event.target.newMax.value);
+  var newCookies = parseFloat(event.target.newCookies.value);
   console.log(newName, newMin, newMax, newCookies);
 
   //basic data validation so that blank fields cannot be submitted
@@ -159,10 +155,10 @@ function createNewObject(event) {
   event.target.newMax.value = null;
   event.target.newCookies.value = null;
 
+  //create a new instance of StoreLocation
   var newObject = new StoreLocation(newName, newMin, newMax, newCookies);
-  console.log(newObject);
-  //clear table before loading new content
-  workIt();
+  //clear table before loading new content-- revised after code review
+  cookieTable.textContent = null;
   //fill table with new content
   makeHeader();
   //render new row
@@ -171,4 +167,4 @@ function createNewObject(event) {
   makeFooter();
 };
 
-inputForm.addEventListener('submit', createNewObject);
+inputForm.addEventListener('submit', handleNewObject);

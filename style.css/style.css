@@ -1,3 +1,10 @@
+/*Proto Style Guide
+Background color: #F4F6FB
+Text Color, Outline Color: #2C3E50;
+Highlight Color: #E74C3C;
+Font: Headers- Futura 30px font kerning 2em; Text: Raleway 16px;
+*/
+
 h1 {
   font-family: "Futura", sans-serif;
   font-kerning: 2em;
@@ -22,21 +29,27 @@ h2 {
 
 body {
   background-color: #F4F6FB;
+  color: #2C3E50;
 }
 
 table {
-  border: 5px solid black;
+  color: #2C3E50;
+  border: 5px solid #2C3E50;
   margin-left: 5%;
   width: 85%;
+  border-collapse: collapse;
 
 }
 
+tr:hover{
+  background-color: #dee7fd;
+}
 th {
   font-family: "Futura", sans-serif;
   font-kerning: 2em;
   font-size: 16px;
   font-weight: bold;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid #2C3E50;
 }
 
 td {
@@ -49,18 +62,38 @@ td {
 }
 
 form {
-  padding-bottom: 2%;
+  margin-top: 2%;
   width: 90%;
   margin-left: 5%;
   font-family: "Raleway", sans-serif;
   font-size: 12px;
+  color: #2C3E50;
 }
 
 input {
   width: 12%;
+  color: #2C3E50;
+  font-family: "Raleway", sans-serif;
+
 }
+
+fieldset {
+  border: 1px solid #2C3E50;
+  font-family: "Raleway", sans-serif;
+}
+
 button {
   margin-left: 5%;
-  padding: 0.5% 1% 0.5% 1%;
+  padding: 0.5% 1.5% 0.5% 1.5%;
   float: right;
+  color: #2C3E50;
+  background-color: #F4F6FB;
+  border: 1px solid #2C3E50;
+  font-size: 12px;
+}
+
+button:hover {
+  background-color: #EB4C4B;
+  color: white;
+  font-family: "Raleway", sans-serif;
 }

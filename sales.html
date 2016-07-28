@@ -11,26 +11,27 @@
     <img id="fish" src="https://github.com/codefellows/seattle-201d11/raw/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png" alt="fishpic" title="This is a picture of a salmon. Don't you want cookies made from it?"/>
     <h2>Sales Data</h2>
   </header>
+  <table id="salesTable"></table>
   <form id="inputForm">
     <fieldset>
       <legend>Add or update franchise locations</legend>
       <!--Location Input-->
       <label for="newName"> Location Name: </label>
-      <input type="text" name="newName"/>
+      <input type="text" name="newName" required/>
       <!--minCustPerHour Input-->
       <label for="newMin"> Customers Per Hour- Min: </label>
-      <input type="number" step ="any" name="newMin" maxlength="2"/>
+      <input type="number" step ="any" name="newMin" required/>
       <!--maxCustPerHour Input-->
       <label for="newMax"> Max: </label>
-      <input type="number" step="any" name="newMax"/>
+      <input type="number" step="any" name="newMax" required/>
       <!--Average Cookies per customer Input-->
       <label for="newCookies"> Cookies Per Sale: </label>
-      <input type="number" step="any" name="newCookies"/>
+      <input type="number" step="any" name="newCookies" required/>
       <!--Button for submitting user input-->
       <button type="submit" id="submitButton">Submit</button>
     </fieldset>
   </form>
-  <table id="salesTable"></table>
+
   <script src="app.js/app.js"></script>
 </body>
 </html>
