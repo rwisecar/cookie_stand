@@ -96,8 +96,10 @@ nav a{
   padding-top: 20%;
   z-index: 1;
   opacity: 1;
+  text-shadow: 3px 3px #EFEFEF;
 
 }
+
 
 .introAbout {
   margin-top: 0;
@@ -223,8 +225,6 @@ nav a{
   color: #EFEFEF;
   margin-top: 5%;
 
-
-  /*float: right;*/
 }
 
 #enjoy p {
@@ -240,7 +240,7 @@ nav a{
 }
 
 #locations h2 {
-  
+
   text-align: center;
 }
 
@@ -256,3 +256,24 @@ nav a{
 #lastfish  {
   text-align: center;
 }
+
+footer {
+  background-color: #2C3E50;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: auto;
+}
+
+footer p {
+  color: #EFEFEF;
+  text-align: right;
+  padding: 2% 5% 0 0;
+  margin-bottom: 0;
+  display: inline;
+}
+/*
+footer a img{
+  height: 20%
+  margin: 0;
+}*/
