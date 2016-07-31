@@ -41,6 +41,13 @@ h3 {
   font-family: "Futura", sans-serif;
 }
 
+h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2C3E50;
+  font-family: "Raleway", sans-serif;
+}
+
 p {
   font-size: 16px;
   font-weight:normal;
@@ -145,8 +152,6 @@ nav a{
   display: inline;
   margin: 5% 0 0 6%;
 }
-
-
 
 
 /*About Page */
@@ -319,6 +324,57 @@ input#submit {
 }
 
 input#submit:hover {
+  color: #EFEFEF;
+  background-color: #F4282A;
+}
+
+/*STORE PAGE*/
+#store {
+  position: relative;
+}
+
+#store h3, #store h4{
+  text-align: center;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#prodimages img{
+  max-width: 20%;
+  display: block;
+  height: 200px;
+  padding: 2% 2% 2% 5%;
+  margin-right: 0;
+}
+
+#descriptions{
+position: absolute;
+top: 10%;
+right: 3%;
+
+}
+
+#descriptions p {
+  padding-bottom: 2%
+  margin-bottom: 0;
+}
+
+.quantity {
+  padding: 3% 0 3% 0;
+}
+
+input.cart{
+  margin-bottom: 10%;
+  background-color: blue;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  padding: 1% 2% 1% 2%;
+  background-color: white;
+  color: #2C3E50;
+  border: none;
+}
+
+input.cart:hover {
   color: #EFEFEF;
   background-color: #F4282A;
 }
