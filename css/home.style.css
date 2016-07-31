@@ -6,6 +6,7 @@ Salmon Color: #F4282A;
 Font: Headers- Futura 30px font kerning 2em; Text: Raleway 16px;
 */
 
+/*Basic Element Style*/
 body {
   margin: 0;
   width: 100%;
@@ -47,6 +48,8 @@ p {
   font-family: "Raleway", sans-serif;
 }
 
+/*Header Style For All Pages*/
+
 header {
   background-color: #2C3E50;
   width: 100%;
@@ -60,14 +63,15 @@ header h2 {
   padding-left: 2%;
   left: 0;
   top: 30%;
+  left: 3%;
   display: inline;
 }
 
 nav {
   display: inline;
   position: absolute;
-  right: 0;
-  top: 30%;
+  right: 3%;
+  top: 40%;
 }
 nav a{
   text-decoration: none;
@@ -77,8 +81,7 @@ nav a{
   padding: 5px;
 }
 
-
-
+/*Home Page Image Intro Section*/
 .intro{
   margin-top: 0;
   width: 100%;
@@ -104,7 +107,6 @@ nav a{
 
 }
 
-
 .introAbout {
   margin-top: 0;
   width: 100%;
@@ -112,7 +114,6 @@ nav a{
   background-image: url("../images/fishing.jpg");
   background-size: cover;
   opacity: 0.5;
-
 }
 
 .introAbout h1 {
@@ -123,97 +124,69 @@ nav a{
 
 }
 
+/*About Page */
+
+/*Basic Styling for Elements with Blue Backgrounds*/
 #about, #tourists, #enjoy {
   background-color: #2C3E50;
   margin: 0;
   height: 250px;
   width: auto;
+  position: relative;
 }
+
+/*Basic Styling for Elements with Grey Backgrounds*/
+
+#fishes, #bake {
+  background-color: #F4F6FB;
+  margin: 0;
+  height: 250px;
+  width: auto;
+  position: relative;
+}
+
+/*Element Specific Styling for Elements with Blue Backgrounds*/
 
 #about img{
   display: inline;
   float: left;
   padding-right: 2%;
   margin-top: 0;
+  position: absolute;
 
 }
 
-#about h3{
-  padding-top: 5%;
+#about h3, #about p {
   color: #EFEFEF;
-
+  position: absolute;
+  left: 28%;
 }
 
-#about p{
-  padding-bottom: 5%;
-  color: #EFEFEF;
-}
-
-#fishes {
-  margin-top: 7%;
-  padding-bottom: 5%;
-}
-#fishes img{
-  display: inline;
-  float: right;
-  width: 30%;
-  height: 30%;
-  padding-left: 2%;
-  padding-right: 2%;
-  margin-bottom: 1%;
-}
-
-#fishes h3 {
-  padding-left: 2%;
-  display: inline;
-}
-
-#fishes p {
-  padding-left: 2%;
-
+#about p {
+  top: 20%;
+  margin-right: 5%;
 }
 
 #tourists img{
   display: inline;
   float: left;
   height: 250px;
-  margin-top: 0;
-  padding-right: 5%;
+  position: absolute;
 }
 
 #tourists h3 {
-  margin-top: 2%;
-  padding-left: 2%;
-  padding-top: 5%;
+  position: absolute;
+  top: 5%;
+  left: 42%;
   color: #EFEFEF;
 }
 
 #tourists p {
-  padding-bottom: 5%;
   color: #EFEFEF;
-  margin-left: 0;
-}
-
-#bake {
-  padding-top: 3%;
-}
-#bake img {
-  display: inline;
-  float: right;
-  height: 250px;
-  padding-left: 2%;
-  margin-bottom: 1%;
-
-}
-
-#bake h3{
-  padding-left: 2%;
-  display: inline;
-}
-
-#bake p{
-  padding-left: 2%;
-  padding-bottom: 10%;
+  position: absolute;
+  top: 20%;
+  left: 42%;
+  margin-right: 5%;
 }
 
 #enjoy img {
@@ -221,20 +194,64 @@ nav a{
   display: inline;
   float: left;
   padding-right: 2%;
-
+  position: absolute;
 }
 
 #enjoy h3 {
+  position: absolute;
   display: inline;
   color: #EFEFEF;
-  margin-top: 5%;
-
+  top: 5%;
+  left: 40%;
+  position: absolute;
 }
 
 #enjoy p {
   color: #EFEFEF;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  padding-right: 5%;
+}
+
+/*Element Specific Styling for Elements with Blue Backgrounds*/
+
+#fishes img{
+  position: absolute;
+  right: 3%;
+  top: 20%;
+  float: right;
+  width: 30%;
+  height: 40%;
+  padding-left: 2%;
   padding-right: 2%;
 }
+
+#fishes h3, #bake h3 {
+  position: absolute;
+  left: 3%;
+  padding-left: 2%;
+  display: inline;
+  top: 10%;
+}
+
+#fishes p, #bake p {
+  position: absolute;
+  left: 5%;
+  top: 25%;
+  float: left;
+  margin-right: 40%;
+}
+
+#bake img {
+  display: inline;
+  float: right;
+  height: 250px;
+  padding-left: 2%;
+  margin-bottom: 1%;
+}
+
+/*LOCATIONS PAGE*/
 
 #locations, #locations h2 {
   margin: 0;
@@ -252,6 +269,8 @@ nav a{
   padding-left: 5%;
 }
 
+/*BOTTOM OF PAGE*/
+
 #lastfish img {
   height: 30%;
   margin-top: 5%;
@@ -267,6 +286,7 @@ footer {
   padding: 0;
   height: 50px;
   width: auto;
+  position: relative;
 }
 
 footer p {
@@ -275,9 +295,7 @@ footer p {
   padding: 2% 5% 0 0;
   margin-bottom: 0;
   display: inline;
+  position: absolute;
+  right: 0;
+  bottom: 25%;
 }
-/*
-footer a img{
-  height: 20%
-  margin: 0;
-}*/
