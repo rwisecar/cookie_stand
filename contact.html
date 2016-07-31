@@ -20,10 +20,30 @@
     <section id="contact">
       <h3> Questions or Comments? Let us know! </h3>
       <p> You can contact our head office at 206.867.5309, during normal business hours. </p>
-      <p> You can also send us a message using this form: </p>
-      
-
+      <p> You can also send us your feedback below. </p>
+      <form method="post" id="userfeedback">
+        <fieldset>
+          <legend> Your contact information: </legend>
+            <label>
+              Name:
+              <input type="text" name="name" size="30" maxlength="100">
+            </label>
+            <label>
+              Email:
+              <input type="email" name="email" size="30" maxlength="100">
+            </label>
+          </br>
+          </br>
+            <label>
+              Let us know what you think!
+            </label>
+              <textarea rows="10" cols="100" id="comments">
+              </textarea>
+            <input type="submit" value="Submit" id="submit">
+        </fieldset>
+      </form>
     </section>
+  
 
     <footer>
       <p>&copy2016</p>

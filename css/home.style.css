@@ -65,6 +65,7 @@ header h2 {
   top: 30%;
   left: 3%;
   display: inline;
+
 }
 
 nav {
@@ -81,6 +82,7 @@ nav a{
   padding: 5px;
 }
 
+/*HOME PAGE*/
 /*Home Page Image Intro Section*/
 .intro{
   margin-top: 0;
@@ -123,6 +125,29 @@ nav a{
   text-align: center;
 
 }
+/*Home Page Events Section*/
+
+.events {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20%;
+}
+
+.events h1, .events h2{
+  margin: 5% 5% 0 5%;
+  text-align: center;
+  color: #2C3E50;
+}
+
+.events a img {
+  height: 200px;
+  display: inline;
+  margin: 5% 0 0 6%;
+}
+
+
+
 
 /*About Page */
 
@@ -269,16 +294,37 @@ nav a{
   padding-left: 5%;
 }
 
+
+/*CONTACT PAGE*/
+
+#userfeedback {
+  font-family: "Raleway", sans-serif;
+  width: 63%;
+  margin-bottom: 20%;
+}
+
+#comments {
+  display: block;
+  margin-top: 3%;
+}
+
+input#submit {
+  margin: 2% 0 2% 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  padding: 1% 2% 1% 2%;
+  background-color: white;
+  color: #2C3E50;
+  border: none;
+}
+
+input#submit:hover {
+  color: #EFEFEF;
+  background-color: #F4282A;
+}
+
+
 /*BOTTOM OF PAGE*/
-
-#lastfish img {
-  height: 30%;
-  margin-top: 5%;
-}
-
-#lastfish  {
-  text-align: center;
-}
 
 footer {
   background-color: #2C3E50;
